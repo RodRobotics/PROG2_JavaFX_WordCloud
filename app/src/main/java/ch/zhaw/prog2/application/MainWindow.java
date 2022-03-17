@@ -19,6 +19,16 @@ public class MainWindow extends Application {
         openMainWindow(primaryStage);
     }
     private void openMainWindow(Stage stage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow.fxml"));
+            Pane rootNode = loader.load();
+            Scene scene = new Scene(rootNode);
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 
